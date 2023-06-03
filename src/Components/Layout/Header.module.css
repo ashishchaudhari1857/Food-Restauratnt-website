@@ -2,10 +2,10 @@
     width:100%;
     position: fixed;
     position: sticky;
-    height: 3.5vw;
+    height: 4rem;
     background-color: maroon;
-    font-size: 1vw;
-    font-weight: bold1;    color: white;
+    font-size: 1rem;
+    font-weight: bold;    color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -15,18 +15,16 @@
 }
 .main_img{
     display: flex;
-    width: 110%;
-    height:15vw;
+    width: 100%;
+    height:15rem;
     object-fit: cover;
     transform: rotateZ(-3deg) translateY(-4rem) translateX(-1rem);
 
    
 }
-@media (min-width:1250px){
+
+@media (max-width:600px) {
     .header{
-        height: 2.5vw;
-        font-size: 0.8vw;
+      font-size: 0.5rem;
     }
-
 }
-

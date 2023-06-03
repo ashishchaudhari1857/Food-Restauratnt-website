@@ -26,7 +26,7 @@ const AvailabeMeal = () => {
       name: "coldrink",
       descriptiom: "drink",
       price: "$2",
-    },MY
+    },
   ];
   const [MealAvailabe, setMealAvailabe] = useState(Dummy);
 
