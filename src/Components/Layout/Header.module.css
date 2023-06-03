@@ -1,0 +1,32 @@
+.header{
+    width:100%;
+    position: fixed;
+    position: sticky;
+    height: 3.5vw;
+    background-color: maroon;
+    font-size: 1vw;
+    font-weight: bold1;    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 ,10%;   
+    z-index: 10;
+   
+}
+.main_img{
+    display: flex;
+    width: 110%;
+    height:15vw;
+    object-fit: cover;
+    transform: rotateZ(-3deg) translateY(-4rem) translateX(-1rem);
+
+   
+}
+@media (min-width:1250px){
+    .header{
+        height: 2.5vw;
+        font-size: 0.8vw;
+    }
+
+}
+
