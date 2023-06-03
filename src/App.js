@@ -1,13 +1,15 @@
 import react  from "react";
 import {Header}from "./Components/Layout/Header";
-import { MealSummary } from "./Components/Meal/MealSummary";
+import { Meal } from "./Components/Meal/Meal";
 const App=()=>{
 
   
   return(
     <>
     <Header></Header>
-<MealSummary></MealSummary>
+   <main>
+    <Meal></Meal>
+   </main>
     </>
   )
 }
