@@ -1,6 +1,7 @@
 import { useState } from "react";
 import classes from "./AvailabelMeal.module.css";
-import { Quantity } from "./Quantity";
+import Card from "../UI/Card";
+import Mealitem from "./Mealitem/Mealitem";
 const AvailabeMeal = () => {
   const Dummy = [
     {
@@ -31,23 +32,15 @@ const AvailabeMeal = () => {
   const [MealAvailabe, setMealAvailabe] = useState(Dummy);
 
   const Meallist = MealAvailabe.map((meal) => {
-    return (
-
-      <ul>
-        <li className={classes.name}>{meal.name}</li>
-        <li className={classes.descriptiom}>{meal.descriptiom}</li>
-        <li className={classes.price}>{meal.price}</li>
-        <Quantity></Quantity>
-        <hr></hr>
-      </ul>
-    );
+    return <Mealitem key={meal.id} meal={meal}></Mealitem>;
   });
   return (
-    <>
-  <section className={classes.mealcoantiner}>{Meallist}</section>
- 
-  </>
+    <Card>
+      <ul>{Meallist}</ul>
+    </Card>
   );
 };
+
+
 
 export { AvailabeMeal };
