@@ -37,7 +37,7 @@ const AvailabeMeal = () => {
   });
   return (
     <Card>
-      <h>akjdklsandl</h>
+     
       <ul>{Meallist}</ul>
     </Card>
   );
