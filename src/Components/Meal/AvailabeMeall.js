@@ -16,6 +16,7 @@ const AvailabeMeal = () => {
       descriptiom: "veg",
       price: "$5.7",
     },
+  
     {
       id: "m3",
       name: "chicken pulaw",
@@ -36,6 +37,7 @@ const AvailabeMeal = () => {
   });
   return (
     <Card>
+      <h>akjdklsandl</h>
       <ul>{Meallist}</ul>
     </Card>
   );
