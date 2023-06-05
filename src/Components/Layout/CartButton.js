@@ -1,10 +1,10 @@
 import React from "react";
 import { MdShoppingCart } from "react-icons/md";
 import classes from "./CartButton.module.css";
-const CartButton = () => {
+const CartButton = props => {
   return (
     <>
-      <button className={classes.btn}>
+      <button className={classes.btn} onClick={props.OpenHandler} >
         <span >
           <MdShoppingCart className={ classes.icon} />
         </span>

@@ -23,6 +23,7 @@ const Modal = (props) => {
         <ModalOverlay>{props.children}</ModalOverlay>,
         portal_element
       )}
+
     </>
   );
 };
