@@ -16,7 +16,7 @@ const Showcart = () => {
 
   return (
     <>
-      <CartButton OpenHandler={OpenHandler}></CartButton>
+      <CartButton OpenHandler={OpenHandler}  CloseHandler={CloseHandler}></CartButton>
       {flag && <Cart CloseHandler={CloseHandler}></Cart>}
     </>
   );
