@@ -1,20 +1,14 @@
 import Modal from "../UI/Modal";
 import classes from "./Cart.module.css";
+import { Cartitemlist } from "./Cartitemlist";
 
 
 const Cart = (props) => {
 
-  const cartitem = (
-    <ul className={classes['cart-items']}>
-      {[{ id: "c1", name: "shushi", amount: 2, price: 11.99 },].map((item) => {
-        <li>{item.name}</li>;
-      })}
-    </ul>
-  );
   return (
     <>
       <Modal onclose={props.CloseHandler}>
-      {cartitem}
+        <Cartitemlist></Cartitemlist>
       <div className={classes.total}>
         <span>Total Amount</span>
         <span> 35.2</span>
