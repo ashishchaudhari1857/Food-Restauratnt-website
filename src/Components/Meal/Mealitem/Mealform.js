@@ -1,28 +1,33 @@
 import classes from "./Mealform.module.css";
 import Input from "../../UI/Input";
 import { useContext } from "react";
-import { CartContext } from "../../../Store/CartContext";
+import { useRef, useState } from "react";
 const MealForm = (props) => {
-  const ctx = useContext(CartContext);
-  const ADD_ITEM = (event) => {
+  const [validquantity, setvalidquantity] = useState(true);
+
+  const quantityRef = useRef();
+  const Submithandler = (event) => {
     event.preventDefault();
-    console.log(ctx);
-    const obj = {
-      quantity: event.target.quantity.value,
-    };
-    console.log(obj.quantity);
-    console.log(ctx.items.id)
-    if(ctx.items.id){
-      console.log("csnk")
+    const enterquantity = quantityRef.current.value;
+    const enterquantityNumber = +enterquantity;
+    if (
+      enterquantityNumber === 0 ||
+      enterquantityNumber > 5 ||
+      enterquantityNumber < 1
+    ) {
+      setvalidquantity(false);
+      return;
     }
-    else{
-         ctx.items.push({id:"c1"})
-    }
+
+    props.Add_to_cart(enterquantityNumber);
+    quantityRef.current.value='1'
   };
+
   return (
     <>
-      <form className={classes.form} onSubmit={ADD_ITEM}>
+      <form className={classes.form} onSubmit={Submithandler}>
         <Input
+          ref={quantityRef}
           label={"quantity"}
           input={{
             id: "quantity",
@@ -35,6 +40,7 @@ const MealForm = (props) => {
           }}
         ></Input>
         <button type="submit">Add item</button>
+        {!validquantity && <p>please enter the valid input</p>}
       </form>
     </>
   );

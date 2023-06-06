@@ -8,26 +8,26 @@ const AvailabeMeal = () => {
       id: "m1",
       name: "fish",
       descriptiom: "non-veg",
-      price: "$12",
+      price: "12",
     },
     {
       id: "m2",
       name: "paneer",
       descriptiom: "veg",
-      price: "$5.7",
+      price: "5.7",
     },
   
     {
       id: "m3",
       name: "chicken pulaw",
       descriptiom: "non-veg",
-      price: "$70",
+      price: "70",
     },
     {
       id: "m4",
       name: "coldrink",
       descriptiom: "drink",
-      price: "$2",
+      price: "2",
     },
   ];
   const [MealAvailabe, setMealAvailabe] = useState(Dummy);
