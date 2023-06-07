@@ -5,8 +5,6 @@ const Showcart = () => {
   const [flag, setflag] = useState(false);
 
   const CloseHandler = () => {
-     
-
     setflag(false);
   };
   const OpenHandler = () => {
