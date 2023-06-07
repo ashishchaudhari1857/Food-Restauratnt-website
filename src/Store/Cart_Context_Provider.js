@@ -7,16 +7,16 @@ const defaultstate = {
   totalAmount: 0,
 };
 const cartReducer = (state, action) => {
+//  this logic for the add to cart
+// 
+// 
   if (action.type === "ADD") {
     let updatedtotalAmount;
-    if(action.check==="with+"){
-      
-    updatedtotalAmount =
-    state.totalAmount + Number(action.item.price) * 1;
-
-    }else{
-     updatedtotalAmount =
-      state.totalAmount + Number(action.item.price) * action.item.quantity;
+    if (action.check === "with+") {
+      updatedtotalAmount = state.totalAmount + Number(action.item.price) * 1;
+    } else {
+      updatedtotalAmount =
+        state.totalAmount + Number(action.item.price) * action.item.quantity;
     }
 
     const existingitemindex = state.items.findIndex(
@@ -27,9 +27,15 @@ const cartReducer = (state, action) => {
     let updatedItems;
 
     if (existingCartItem) {
+      let cnt;
+      if (action.check == "with+") {
+        cnt = existingCartItem.quantity + 1;
+      } else {
+        cnt = existingCartItem.quantity + action.item.quantity;
+      }
       const updatedItem = {
         ...existingCartItem,
-        quantity: existingCartItem.quantity + 1,
+        quantity: cnt,
       };
       updatedItems = [...state.items];
       updatedItems[existingitemindex] = updatedItem;
@@ -41,6 +47,10 @@ const cartReducer = (state, action) => {
       items: updatedItems,
       totalAmount: updatedtotalAmount,
     };
+
+    // 
+    //  this logic is to remove the item from card
+    // 
   }
   if (action.type === "REMOVE") {
     const existingitemindex = state.items.findIndex(
@@ -67,10 +77,18 @@ const cartReducer = (state, action) => {
   }
   return defaultstate;
 };
+
+
+
+
+// 
+// 
+
+// 
 const Cart_Context_Provider = (props) => {
   const [cartState, dispatchCartAction] = useReducer(cartReducer, defaultstate);
-  const addItem = (item ,check) => {
-    dispatchCartAction({ type: "ADD", item: item ,check:check});
+  const addItem = (item, check) => {
+    dispatchCartAction({ type: "ADD", item: item, check: check });
   };
   const removeItem = (id) => {
     dispatchCartAction({ type: "REMOVE", id: id });

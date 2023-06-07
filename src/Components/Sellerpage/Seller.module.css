@@ -1,0 +1,32 @@
+.form{
+    z-index: 100000;
+    padding: 1rem;
+    box-shadow: 0 2px 8px  rgba(213, 66, 66, 0.25);
+    max-width: 60rem;
+    width: 60%;
+    background-color: white;
+    margin:auto;
+    border-radius: 14px;
+    position: relative;
+    margin-top: 1rem;
+    top: 20vh;
+    
+}
+
+
+h2{
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.actions{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.actions button{
+    border-radius: 14px;
+    background-color: purple;
+    color: white;
+}

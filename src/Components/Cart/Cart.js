@@ -8,7 +8,6 @@ const Cart = (props) => {
   const ctx = useContext(CartContext);
   const totalAmount = `$ ${ctx.totalAmount.toFixed(2)}`;
 
-
   const removeHadnler=(id)=>{
     ctx.removeItem(id)
 
@@ -31,7 +30,7 @@ const Cart = (props) => {
     </ul>
   );
 
-  console.log(ctx.dispatchCartAction)
+
 
   const has_Item = ctx.items.length > 0;
 
